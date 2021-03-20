@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/balan/Documents/UnityIGRE/Merlin's Demon War/Build/Merlin's Demon War.exe
+C:/Users/balan/Desktop/MerlinsDemonWarVersion2/Merlin's Demon War.exe
 SceneListBegin?
 Assets/Scenes/MainMenu.unity
 Assets/Scenes/GamePlay.unity

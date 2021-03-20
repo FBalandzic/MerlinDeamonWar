@@ -288,11 +288,18 @@ public class GameController : MonoBehaviour
         bool enemyIsDead = false;
         if (playersTurn)
         {
+            foreach (Card c in playersHand.cards)
+            {
+                c.GetComponent<DragAndDrop>().enabled = true;
+            }
+
             if (player.mana<5)
                 player.mana++;
+              //player.GetComponent<DragAndDrop>().enabled = true;
         }
         else // enemy
         {
+           // player.GetComponent<DragAndDrop>().enabled = false;
             if (enemy.health>0)
             {
                 if (enemy.mana<5)
@@ -333,8 +340,14 @@ public class GameController : MonoBehaviour
 
     private void MonstersTurn()
     {
+        //ovo sam menjao
+        foreach(Card c in playersHand.cards)
+        {
+            c.GetComponent<DragAndDrop>().enabled = false;
+        }
         Card card = AIChooseCard();
         StartCoroutine(MonsterCastCard(card));
+        
     }
 
     private Card AIChooseCard()

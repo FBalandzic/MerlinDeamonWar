@@ -78,12 +78,24 @@ public class Deck
                 if (hand.isPlayers)
                 {
                     GameController.instance.player.PlayDealSound();
+                   
                 }
                 else
                 {
                     GameController.instance.enemy.PlayDealSound();
+                    
+                 
                 }
-                hand.cards[h] = CreateNewCard(hand.positions[h].position, hand.animNames[h]);
+                if (hand.isPlayers) 
+                { 
+                    hand.cards[h] = CreateNewCard(hand.positions[h].position, hand.animNames[h]);
+                }
+                else
+                {
+                    hand.cards[h] = CreateNewCard(hand.positions[h].position, hand.animNames[h]);
+                    hand.cards[h].GetComponent<DragAndDrop>().enabled = false;
+                }
+                    
                 return;
             }
         }
